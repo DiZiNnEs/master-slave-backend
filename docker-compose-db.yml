@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: ms-backend-db
+    image: postgres:latest
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/
+    restart: always
+    environment:
+      - POSTGRES_DB=ms-backend
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/pg
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

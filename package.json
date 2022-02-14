@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-server": "ts-node src/index.ts",
     "dev-start-db": "docker-compose -f docker-compose-db.yml up",
-    "migrate": "npx knex migrate:latest --knexfile db/knexfile.ts"
+    "migrate": "npx knex migrate:latest --knexfile db/knexfile.ts",
+    "migrate-create-win10-example": "npx knex migrate:make --knexfile knexfile.ts -x ts <migration_file>"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "express": "^4.17.2",
     "fastify": "^3.27.1",
     "knex": "^1.0.3",
     "pg": "^8.7.3"

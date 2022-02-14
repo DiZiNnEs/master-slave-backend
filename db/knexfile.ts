@@ -8,13 +8,15 @@ const config: { [key: string]: Knex.Config } = {
     connection: {
       database: "ms-backend",
       user: "postgres",
-      password: "postgres"
+      password: "postgres",
+      port: 5432
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
+      extension: 'ts',
       tableName: "knex_migrations",
       directory: "migrations"
     },
